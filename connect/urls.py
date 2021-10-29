@@ -1,6 +1,6 @@
 from django.urls import path
-from .views import connect
+from .views import ConnectList
 
 urlpatterns = [
-    path('a/',connect),
+    path('list/', ConnectList.as_view()),
 ]

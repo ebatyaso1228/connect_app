@@ -1,6 +1,8 @@
 from django.shortcuts import render
-from django.http import HttpResponse
+from django.views.generic import ListView
+from .models import ConnectModel
 
 # Create your views here.
-def connect(request):
-    return HttpResponse('')
+class ConnectList(ListView):
+    template_name = 'list.html'
+    model = ConnectModel
