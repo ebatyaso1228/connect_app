@@ -8,12 +8,13 @@
 {% for item in object_list %}
 <div class="alert alert-secondary" role="alert">
     {{ item.title }}
-    <button type="button" class="btn btn-lg btn-primary" disabled>テストボタン</button>
-    <button type="button" class="btn btn-secondary btn-lg" disabled>Button</button>
+    <a href="{% url 'update' item.pk  %}" class="btn btn-info" tabindex="-1" role="button" aria-disabled="true">編集</a>
+    <a href="{% url 'delete' item.pk %}" class="btn btn-primary" tabindex="-1" role="button" aria-disabled="true">削除</a>
+    <a href="{% url 'detail' item.pk %}" class="btn btn-success" tabindex="-1" role="button" aria-disabled="true">詳細</a>
 </div>
 
-<div class="alert alert-secondary" role="alert">
+<!-- <div class="alert alert-secondary" role="alert">
     {{ item.memo }}
-</div>
+</div> -->
 {% endfor %}
 {% endblock content %}
