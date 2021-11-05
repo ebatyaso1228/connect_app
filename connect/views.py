@@ -12,6 +12,8 @@ class ConnectList(ListView):
     template_name = 'list.html'
     model = ConnectModel
 
+
+
 class ConnectDetail(DetailView):
     template_name = 'detail.html'
     model = ConnectModel
@@ -19,8 +21,10 @@ class ConnectDetail(DetailView):
 class ConnectCreate(CreateView):
     template_name = 'create.html'
     model = ConnectModel
-    fields = ('title', 'memo','myimage')
+    fields = ('title', 'memo','myimage','level')
     success_url = reverse_lazy('list')
+   
+
 
 class ConnectDelete(DeleteView):
     template_name = 'delete.html'
