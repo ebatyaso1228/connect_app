@@ -1,9 +1,14 @@
 {% extends 'base.html' %}
+{% load static %}
 
 {% block content %}
+
+<title_cre>基本情報入力</title_cre>
+
+
 <form action="" method="POST" enctype="multipart/form-data">{% csrf_token %}
     {{form.as_p}}
-    <input type="submit" value="作成する">
+    <input type="submit" value="作成する" href="list.html">
 </form>    
 
 
