@@ -1,2 +1,32 @@
 {% extends 'base.html' %}
-{{ object.title }}
+{% load static %}
+{%block title %}個人の詳細{%endblock title %}
+
+{% block content %}
+    <div class="container">
+        <div class="row">
+            <div class="col-sm-8 col-md-3" style="height: 400px;">
+                <div style="border-radius :8px; box-shadow :0px 0px 5px silver; background-color: #bcddff; height: 230px; width: 200px; margin-top: 10px;">
+                    <img src="{{ object.myimage.url }} "width="95%" height="80%">
+                    {{ object.title }}
+                </div>
+            
+                <div style="border-radius :8px; box-shadow :0px 0px 5px silver; background-color: #bcddff; height: 270px; margin-top: 10px;">
+                    <div class="container">
+                        <h5 style="background-color: #C4C4C4;">開発経験の詳細</h5>
+                    </div>
+                    <div class="container" style="background-color: #C4C4C4; margin-top: 20px; margin-left: 20px;">
+                        {{ object.memo }}
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-auto"></div>
+            <div class="col-sm-8 col-md-7"style="border-radius :8px; box-shadow :0px 0px 5px silver; background-color: #bcddff; height: 510px; margin-top: 10px; margin-left: 20px;">
+                <div class="c2">
+                    <h3>col-md-4aaaaaaaaaaa</h3>
+                    <p>中央三分の二の内容を書く</p>
+                </div>
+            </div>            
+        </div>
+    </div>
+{% endblock content %}
