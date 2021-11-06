@@ -22,7 +22,7 @@ class ConnectDetail(DetailView):
 class ConnectCreate(CreateView):
     template_name = 'create.html'
     model = ConnectModel
-    fields = ('title', 'memo','myimage','level')
+    fields = ('title', 'memo','myimage','level','level_b')
     success_url = reverse_lazy('list')
    
 
