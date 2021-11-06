@@ -5,6 +5,7 @@ from django.urls import reverse_lazy
 from django.contrib.auth.models import User
 from django.shortcuts import redirect
 from django.contrib.auth import authenticate, login
+from django.http import HttpResponse
 
 
 # Create your views here.
@@ -70,5 +71,9 @@ def loginfunc(request):
     
     return render(request, 'login.html')
 
+def goodfunc(request,pk):
+    post = ConnectModel.objects.get(pk=pk)
+    print("GET PK")
+    print(post)
+    return HttpResponse('')
 
-    
