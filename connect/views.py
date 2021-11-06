@@ -1,5 +1,5 @@
 from django.shortcuts import render
-from django.views.generic import ListView , DetailView , CreateView , DeleteView , UpdateView
+from django.views.generic import ListView , DetailView , CreateView , DeleteView , UpdateView 
 from .models import ConnectModel
 from django.urls import reverse_lazy
 from django.contrib.auth.models import User
@@ -34,8 +34,19 @@ class ConnectDelete(DeleteView):
 class ConnectUpdate(UpdateView):
     template_name = 'update.html'
     model = ConnectModel
-    fields = ('title', 'memo')
+    fields = ('title', 'memo','myimage','level')
     success_url = reverse_lazy('list')
+
+
+class ConnectMember(DetailView):
+    template_name = 'member.html'
+    model = ConnectModel
+
+
+
+
+
+
 
 def signupfunc(request):
     if request.method == 'POST':
