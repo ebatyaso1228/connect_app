@@ -13,6 +13,8 @@
     <a href="{% url 'update' item.pk  %}" class="btn btn-info" tabindex="-1" role="button" aria-disabled="true">編集</a>
     <a href="{% url 'delete' item.pk %}" class="btn btn-primary" tabindex="-1" role="button" aria-disabled="true">削除</a>
     <a href="{% url 'detail' item.pk %}" class="btn btn-success" tabindex="-1" role="button" aria-disabled="true">詳細</a>
+    <a href="{% url 'good' item.pk %}" class="btn btn-primary" role="button" aria-pressed="true">select</a>
+
 </div>
 
 <!-- <div class="alert alert-secondary" role="alert">

@@ -1,5 +1,5 @@
 from django.urls import path
-from .views import ConnectList , ConnectDetail , ConnectCreate , ConnectDelete , ConnectUpdate , signupfunc , loginfunc ,ConnectMember
+from .views import ConnectList , ConnectDetail , ConnectCreate , ConnectDelete , ConnectUpdate , signupfunc , loginfunc ,ConnectMember , goodfunc
 from django.conf import settings
 from django.contrib.staticfiles.urls import static
 from django.contrib.staticfiles.urls import staticfiles_urlpatterns
@@ -14,6 +14,7 @@ urlpatterns = [
     path('delete/<int:pk>', ConnectDelete.as_view(), name='delete'),
     path('update/<int:pk>', ConnectCreate.as_view(), name='update'),
     path('member/<int:pk>', ConnectMember.as_view(), name='member'),
+    path('good/<int:pk>', goodfunc, name='good'),
 
     
     
