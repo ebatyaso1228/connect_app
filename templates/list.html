@@ -1,25 +1,50 @@
-{% extends 'base.html' %}
-{% load static %}
-
-
 {% block content %}
-{% for item in object_list %}
-<p>AAAAAA<p>
-<div class="alert alert-secondary" role="alert">
-    {{ item.title }}
-    <!-- {{ item.myimage }} -->
-    <img src="{{ item.myimage.url }}" width="10%" height="10%">
-    <a href="{% url 'update' item.pk  %}" class="btn btn-info" tabindex="-1" role="button" aria-disabled="true">編集</a>
-    <a href="{% url 'delete' item.pk %}" class="btn btn-primary" tabindex="-1" role="button" aria-disabled="true">削除</a>
-    <a href="{% url 'detail' item.pk %}" class="btn btn-success" tabindex="-1" role="button" aria-disabled="true">詳細</a>
-    <a href="{% url 'good' item.pk %}" class="btn btn-primary" role="button" aria-pressed="true">select</a>
+<div class="container px-4">
+    {% for item in object_list %}
+    <div class="row my-4 py-2 border-bottom" style="background-color: #DCF7E3;">
+        <div class="col-2 text-center">
+            <div>
+                <img src="{% static 'example.png' %}" width="90" height="90">
+            </div>
+            <div> 
+                <h5 style="border-radius :8px; box-shadow :0px 0px 5px silver; background-color: #FFFFFF;">
+                    {{ item.title }}</h5>
+            </div>
+        </div>
+        <div class="col" >
+            <div class="card">
+                <div class="card-header">
+                    <h5>フロントエンド</h5>
+                </div>
+                <div class="card-body text-center">
+                    {{ item.level }}
+                </div>
+            </div>
+        </div>
+        <div class="col">
+            <div class="card">
+                <div class="card-header">
+                    <h5>バックエンド</h5>
+                </div>
+                <div class="card-body text-center">
+                    {{ item.level_b }}
+                </div>
+            </div>
+        </div>
+        <!-- {{ item.myimage }} -->
+        
+        <div class="col">
+            <a href="{% url 'detail' item.pk %}" class="btn btn-outline-info" tabindex="-1" role="button" aria-disabled="true">詳細</a>
+            <a href="{% url 'good' item.pk %}" class="btn btn-outline-primary" role="button" aria-pressed="true">select</a>
+            <a href="{% url 'update' item.pk  %}" class="btn btn-outline-success" tabindex="-1" role="button" aria-disabled="true">編集</a>
+            <a href="{% url 'delete' item.pk %}" class="btn btn-outline-danger" tabindex="-1" role="button" aria-disabled="true">削除</a>
+        </div>
+    </div>
 
-</div>
-
-<img src="{% static 'example.png' %}" alt="サンプル画像">
 
 <!-- <div class="alert alert-secondary" role="alert">
     {{ item.memo }}
 </div> -->
-{% endfor %}
+    {% endfor %}
+</div>
 {% endblock content %}
