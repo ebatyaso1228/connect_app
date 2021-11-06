@@ -20,18 +20,39 @@
   <body>  
 
     {% block header %}  	
-    <h1 class="headline"><a>サンプルのサイト</a>
-    </h1>
-    <li class="nav-list-item"><a>Home</a>
-    </li>
-    <li class="nav-list-item">About</li>
-    <li class="nav-list-item">Topic</li>
+      <nav class="navbar navbar-expand-md navbar-light">
+        <div class="container">
+          <h1 class="m-0">
+            <a href="#" class="navbar-brand d-block">BOOST LEARNING</a>
+          </h1>
+          <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#grobalNav" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+          </button>
+          <div id="grobalNav" class="collapse navbar-collapse">
+            <ul class="navbar-nav mr-auto">
+              <li class="nav-item pl-4 active">
+                <a href="#" class="nav-link text-center">HOME</a>
+              </li>
+              <li class="nav-item pl-4">
+                <a href="../list/" class="nav-link text-center">MENBER</a>
+              </li>
+              <li class="nav-item pl-4">
+                <a href="#" class="nav-link text-center">TEAM</a>
+              </li>
+              <li class="nav-item pl-4">
+                <a href="../login/" class="nav-link text-center">LOGIN</a>
+              </li>
+            </ul>
+          </div>
+        </div>
+      </nav>
     {% endblock header %}
 
     {% block content %}
+      <div class="mx-5"></div>
     {% endblock content %}
 
-
+    
 
     <h1>Hello, world!</h1>
 
