@@ -13,7 +13,7 @@ urlpatterns = [
     path('create/', ConnectCreate.as_view(), name='create'),
     path('delete/<int:pk>', ConnectDelete.as_view(), name='delete'),
     path('update/<int:pk>', ConnectCreate.as_view(), name='update'),
-    path('member/<int:pk>', ConnectMember.as_view(), name='member'),
+    path('member/', ConnectMember.as_view(), name='member'),
     path('good/<int:pk>', goodfunc, name='good'),
 
     

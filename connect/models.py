@@ -11,7 +11,15 @@ class ConnectModel(models.Model):
         verbose_name='',
         blank=True,
         null=True,
+        default=0,)
+
+
+    level_b = models.IntegerField(
+        verbose_name='',
+        blank=True,
+        null=True,
         default=0,
+    
   
     )
 
