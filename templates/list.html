@@ -37,7 +37,7 @@
         
         <div class="col">
             <a href="{% url 'detail' item.pk %}" class="btn btn-outline-info" tabindex="-1" role="button" aria-disabled="true">詳細</a>
-            <a href="{% url 'good' item.pk %}" class="btn btn-outline-primary" role="button" aria-pressed="true">select</a>
+            <a href="{% url 'member'  %}" class="btn btn-outline-primary" role="button" aria-pressed="true">select</a>
             <a href="{% url 'update' item.pk  %}" class="btn btn-outline-success" tabindex="-1" role="button" aria-disabled="true">編集</a>
             <a href="{% url 'delete' item.pk %}" class="btn btn-outline-danger" tabindex="-1" role="button" aria-disabled="true">削除</a>
         </div>
