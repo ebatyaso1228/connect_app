@@ -4,7 +4,7 @@ from django.core.validators import validate_integer
 
 # Create your models here.
 class ConnectModel(models.Model):
-    myimage = models.ImageField(verbose_name='アイコン')
+    myimage = models.ImageField(verbose_name='アイコン', upload_to='media')
     title = models.CharField(verbose_name='自分の名前', max_length=100)
     memo = models.TextField(verbose_name='開発経験')
     level = models.IntegerField(

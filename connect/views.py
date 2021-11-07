@@ -1,3 +1,4 @@
+from django.template import loader
 from django.shortcuts import render
 from django.views.generic import ListView , DetailView , CreateView , DeleteView , UpdateView 
 from .models import ConnectModel
@@ -39,7 +40,7 @@ class ConnectUpdate(UpdateView):
     success_url = reverse_lazy('list')
 
 
-class ConnectMember(DetailView):
+class ConnectMember(ListView):
     template_name = 'member.html'
     model = ConnectModel
 
@@ -72,8 +73,12 @@ def loginfunc(request):
     return render(request, 'login.html')
 
 def goodfunc(request,pk):
+    template = loader.get_template('../connect_app/templates/member.html')
     post = ConnectModel.objects.get(pk=pk)
-    print("GET PK")
-    print(post)
-    return HttpResponse('')
+    post.save()
+    image = post.myimage
+    context = {'m_image':image}
+    # detail_url = '/post/' + 'image' + '/'
+    # return redirect(image)
+    return HttpResponse(template.render( context, request))
 
