@@ -1,16 +1,51 @@
-<img src="/media/default.png" style="max-height:300px"/>
-
+{% extends 'base.html' %}
+{% load static %}
+{% block content %}
     
- 
 <div class="container" >
     <div class="row">
         <div class="col">
-            <h2>経歴</h2>
+            <h2>チーム情報</h2>
         </div>
     </div>
-    <div class="row">
-        <div class="col-ms-6">aaaa</div>
-        <div class="col-ms-6">aaaa</div>
+    <div class="row row-cols-3  mx-5 border-bottom text-center">
+        <div class="col center-block">
+            <div class="card" style="border-radius :10px; box-shadow :0px 0px 20px silver;"> 
+                <h5 class="card-header"style=" box-shadow :0px 0px 10px silver; background-color: #FFFFFF;">
+                    フロント力</h5>
+                <h2 class="card-body" style="background-color: #E5EFFF;">20</h2>
+            </div>
+        </div>
+        <div class="col center-block">
+            <div class="card" style="border-radius :10px; box-shadow :0px 0px 5px silver;"> 
+                <h5 class="card-header" style="box-shadow :0px 0px 5px silver; background-color: #FFFFFF;">
+                    バック力</h5>
+                <h2 class="card-body text-center" style="background-color: #E5EFFF;">20</h2>
+            </div>
+        </div>
+        <div class="col center-block">
+            <div class="card" style="border-radius :10px; box-shadow :0px 0px 5px silver;"> 
+                <h5 class="card-header" style="box-shadow :0px 0px 5px silver; background-color: #FFFFFF;">
+                    チーム開発力</h5>
+                <h2 class="card-body text-center" style="background-color: #F7DCDC;">20</h2>
+            </div>
+        </div>
     </div>
+    
+    <div class="row row-cols-5 py-3 text-center" style="background-color: #DCF7E3; margin-top:50px">
+        {% for item in object_list %}    
+        <div class="col text-center center-block">
+            <div>
+                <img src="{% static 'example.png' %}" weight="90" height="90" />
+            </div>
+            <div> 
+                <h5 style="border-radius :8px; box-shadow :0px 0px 5px silver; background-color: #FFFFFF;">
+                    {{ item.title }}</h5>
+            </div>
+        </div>
+        {% endfor %}
+    </div>
+    
 </div>
 
+{% endblock content %}
